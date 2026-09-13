@@ -1,31 +1,39 @@
-# Medical Disease Diagnosis CNN
+# MedicalDiagnosis-CNN-GradCAM
 
-![License](https://img.shields.io/badge/license-MIT-green)
-![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-Active-success.svg)
 
-A Convolutional Neural Network (CNN) based system designed to assist in the diagnosis of medical conditions from imaging data such as chest X-rays, skin lesions, and retinal scans.
+## Description
+This project focuses on medical image classifier. It aims to provide a robust, efficient, and scalable solution using modern technologies and best practices in the field.
 
-## ⚠️ Medical Disclaimer
-**This software is intended for educational and research purposes only.** It is not intended for use in the diagnosis of disease or other conditions, or in the cure, mitigation, treatment, or prevention of disease. Always consult a qualified healthcare provider for medical advice.
+## Key Features
+- High performance architecture
+- Extensible and modular design
+- Comprehensive data processing capabilities
+- Easy-to-use interface and quick setup
 
-## Features
-- **Deep Learning Architectures**: Includes both a custom CNN model and a Transfer Learning model using `ResNet50`.
-- **Robust Training Pipeline**: Automated data augmentation, learning rate scheduling, and early stopping to prevent overfitting.
-- **Explainability (Grad-CAM)**: Visualizes the regions of the image that contributed most to the model's decision, providing transparency for clinical interpretation.
-- **Web Interface**: A clean Streamlit application for image upload, inference, and visualization.
+## Tech Stack
+- PyTorch\n- ResNet50\n- Grad-CAM\n- Streamlit
 
-## Dataset Information
-This project is designed to be compatible with standard medical datasets (e.g., RSNA Pneumonia Detection Challenge, NIH Chest X-rays). Place your datasets in a `data/train` and `data/val` directory structure.
-
-## Installation
+## Quick Start
 ```bash
+git clone https://github.com/iMuneebK/MedicalDiagnosis-CNN-GradCAM.git
+cd MedicalDiagnosis-CNN-GradCAM
 pip install -r requirements.txt
-streamlit run app.py
+python main.py
 ```
 
-## Model Architecture
-The transfer learning pipeline utilizes `ResNet50` pre-trained on ImageNet. The base layers are initially frozen, and a custom classification head (Global Average Pooling -> Dense -> Dropout -> Output) is trained on the specific medical dataset.
+## Project Structure
+```
+MedicalDiagnosis-CNN-GradCAM/
+├── data/
+├── models/
+├── src/
+├── main.py
+├── requirements.txt
+└── README.md
+```
 
-## Explainability (Grad-CAM)
-Grad-CAM (Gradient-weighted Class Activation Mapping) uses the gradients of any target concept flowing into the final convolutional layer to produce a coarse localization map highlighting the important regions in the image for predicting the concept.
+## License
+This project is licensed under the MIT License.
